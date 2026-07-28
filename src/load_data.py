@@ -1,5 +1,6 @@
 import pandas as pd
 
+# Load dataset
 df = pd.read_csv("data/raw/train.csv")
 
 print("First 5 Rows")
@@ -32,18 +33,11 @@ df = df.drop(columns=["Cabin"])
 
 print("\nMissing Values After Cleaning")
 print(df.isnull().sum())
-# Save cleaned dataset
-df.to_csv("data/processed/train_clean.csv", index=False)
 
-print("\nCleaned dataset saved successfully!")
 # -----------------------------
 # Save Cleaned Dataset
 # -----------------------------
 
-df.to_csv("data/processed/clean_train.csv", index=False)
-
-print("\nCleaned dataset saved successfully!")
-# Save cleaned dataset
-df.to_csv("data/processed/train_cleaned.csv", index=False)
+df.to_csv("data/processed/train_clean.csv", index=False)
 
 print("\nCleaned dataset saved successfully!")
