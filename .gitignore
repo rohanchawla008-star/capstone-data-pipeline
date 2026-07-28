@@ -3,3 +3,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 .env
+database.db
+cloud_storage/
+test_setup.py
