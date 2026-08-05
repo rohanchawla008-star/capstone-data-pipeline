@@ -1,6 +1,6 @@
 # Titanic Data Pipeline Capstone Project
 
-This repository contains my CodeZoner Capstone Internship project. The objective of this project is to build a complete data pipeline using the Titanic dataset, including data loading, preprocessing, exploratory data analysis, feature engineering, visualization, and pipeline automation.
+This repository contains my CodeZoner Capstone Internship project. The goal of this project is to build a complete machine learning pipeline using the Titanic dataset, including data ingestion, preprocessing, feature engineering, visualization, model training, evaluation, optimization, and interpretation.
 
 ---
 
@@ -31,7 +31,11 @@ This repository contains my CodeZoner Capstone Internship project. The objective
 - Outlier detection
 - Pipeline automation
 - SQLite integration
-- Git version control
+- Machine learning model training
+- Model evaluation
+- Cross-validation
+- Hyperparameter optimization
+- Feature importance analysis
 
 ---
 
@@ -49,21 +53,26 @@ CodeZoner_Capstone/
 ├── reports/
 │
 ├── src/
+│   ├── cross_validation.py
 │   ├── database.py
 │   ├── eda.py
 │   ├── load_data.py
+│   ├── model_evaluation.py
+│   ├── model_interpretation.py
+│   ├── model_optimization.py
+│   ├── model_selection.py
+│   ├── model_training.py
+│   ├── pipeline.py
 │   ├── transform_data.py
-│   ├── visualization.py
-│   └── pipeline.py
+│   └── visualization.py
 │
-├── cloud_storage/
 ├── .env
 ├── .env.example
 ├── .gitignore
 ├── database.db
 ├── titanic.db
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 ├── PROJECT_PLAN.md
 ├── test_setup.py
 └── Titanic_EDA.ipynb
@@ -71,184 +80,269 @@ CodeZoner_Capstone/
 
 ---
 
-## Data Source
+# Data Source
 
 ### Primary Dataset
 
-- Titanic dataset (CSV)
+- Titanic Dataset
 - Source: Kaggle Titanic Competition
-- Access method: Local CSV file using Pandas
+- Format: CSV
 
 ```python
 df = pd.read_csv("data/raw/train.csv")
 ```
 
-### Data Limitations
+---
+
+## Dataset Limitations
 
 - Missing values in Age
 - Missing values in Cabin
 - Missing values in Embarked
 - Static dataset
-- No real-time data source
-
-### Future Improvements
-
-- Kaggle API integration
-- REST API integration
-- Cloud storage integration
-- SQL database integration
+- No real-time updates
 
 ---
 
-## Week 1 Progress ✅
+# Week 1 Progress
 
 ### Completed Tasks
 
-- Created repository
-- Configured virtual environment
-- Installed required libraries
-- Loaded the Titanic dataset
-- Handled missing values
-- Created a cleaned dataset
-- Performed exploratory data analysis
-- Updated GitHub repository
+- Repository created
+- Virtual environment configured
+- Required libraries installed
+- Titanic dataset loaded
+- Missing values handled
+- Exploratory data analysis completed
+- Processed dataset generated
 
 ### Status
 
-Week 1 Completed ✅
+✅ Week 1 Completed
 
 ---
 
-## Week 2 Progress ✅
+# Week 2 Progress
 
 ### Completed Tasks
 
-- Explored data sources
-- Implemented data ingestion pipeline
-- Added error handling
-- Created SQLite database
-- Stored and retrieved Titanic data
+- Implemented the data ingestion pipeline
+- Added logging functionality
+- Added exception handling
+- Created SQLite database integration
 - Added validation checks
-- Processed missing values
-- Saved cleaned datasets
+- Cleaned missing values
+- Saved processed dataset
 
 ### Status
 
-Week 2 Completed ✅
+✅ Week 2 Completed
 
 ---
 
-## Week 3 Progress ✅
+# Week 3 Progress
 
 ### Completed Tasks
 
-- Standardized numerical features
+- Standardized numerical variables
 - Encoded categorical variables
 - Created FamilySize feature
 - Created IsAlone feature
-- Generated distribution plots
-- Created correlation heatmaps
+- Generated visualizations
 - Performed outlier detection
-- Verified dataset quality
-- Built preprocessing pipeline
-- Split data into training and testing sets
+- Split training and testing datasets
 - Applied feature scaling
 
 ### Status
 
-Week 3 Completed ✅
+✅ Week 3 Completed
 
 ---
 
-## Week 4 Progress ✅
+# Week 4 Progress
 
-### Day 22 – Data Ingestion
+### Day 22 — Data Ingestion
 
-- Loaded the dataset
+- Loaded Titanic dataset
 - Added logging
 - Implemented exception handling
 - Performed validation checks
 
-### Day 23 – Data Processing
+### Day 23 — Data Processing
 
-- Handled missing values
-- Encoded categorical features
-- Normalized numerical features
-- Applied feature engineering
+- Cleaned missing values
+- Encoded categorical variables
+- Normalized features
+- Performed feature engineering
 
-### Day 24 – Data Visualization
+### Day 24 — Data Visualization
 
-- Created age distribution plots
+- Created histograms
 - Generated correlation heatmaps
-- Performed visualization checks
+- Performed data analysis
 
-### Day 25 – Pipeline Integration
+### Day 25 — Pipeline Integration
 
-- Integrated all modules
+- Integrated all components
 - Executed the complete pipeline
-- Added monitoring and validation
-- Refactored the code
-
-### Day 26 – Review and GitHub
-
-- Fixed bugs
-- Updated documentation
-- Uploaded changes to GitHub
+- Performed testing
 
 ### Status
 
-Week 4 Completed ✅
+✅ Week 4 Completed
+
+---
+
+# Week 5 Progress
+
+## Model Selection
+
+Selected models:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors (KNN)
+
+---
+
+## Model Training Results
+
+| Model | Accuracy |
+|------|------|
+| Logistic Regression | 80.45% |
+| Decision Tree | 79.89% |
+| Random Forest | 82.68% |
+| KNN | 78.77% |
+
+---
+
+## Model Evaluation
+
+| Metric | Score |
+|------|------|
+| Accuracy | 82.68% |
+| Precision | 80.28% |
+| Recall | 77.03% |
+| F1 Score | 78.62% |
+
+---
+
+## Confusion Matrix
+
+```text
+[[91 14]
+ [17 57]]
+```
+
+---
+
+## Cross-Validation Results
+
+| Fold | Accuracy |
+|------|------|
+| Fold 1 | 75.98% |
+| Fold 2 | 79.78% |
+| Fold 3 | 87.08% |
+| Fold 4 | 78.65% |
+| Fold 5 | 82.02% |
+
+Average accuracy:
+
+```text
+80.70%
+```
+
+---
+
+## Hyperparameter Optimization
+
+Best parameters:
+
+```python
+{
+    "max_depth": 5,
+    "min_samples_split": 2,
+    "n_estimators": 100
+}
+```
+
+Best score:
+
+```text
+82.86%
+```
+
+---
+
+## Feature Importance
+
+| Feature | Importance |
+|------|------:|
+| Sex | 0.4256 |
+| Fare | 0.1662 |
+| Pclass | 0.1252 |
+| Age | 0.0960 |
+| FamilySize | 0.0700 |
 
 ---
 
 ## Running the Project
 
-### Activate the virtual environment
-
-#### Windows
+Activate the virtual environment:
 
 ```bash
 venv\Scripts\activate
 ```
 
-#### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
----
-
-### Run the complete pipeline
+Run the pipeline:
 
 ```bash
 python src/pipeline.py
 ```
 
----
+Run model training:
 
-## Output Files
+```bash
+python src/model_training.py
+```
 
-```text
-data/processed/train_clean.csv
-data/processed/train_transformed.csv
-database.db
+Run model evaluation:
+
+```bash
+python src/model_evaluation.py
+```
+
+Run cross-validation:
+
+```bash
+python src/cross_validation.py
+```
+
+Run model optimization:
+
+```bash
+python src/model_optimization.py
+```
+
+Run model interpretation:
+
+```bash
+python src/model_interpretation.py
 ```
 
 ---
 
-## Upcoming Work
+## Current Status
 
-- Machine learning model development
-- Model training
-- Model evaluation
-- Performance optimization
-- Final documentation
+✅ Week 1 Completed
 
----
+✅ Week 2 Completed
 
-## Author
+✅ Week 3 Completed
 
-Rohan Chawla
+✅ Week 4 Completed
 
-CodeZoner Capstone Internship Project
+✅ Week 5 Completed
+
+🚀 Week 6 Coming Soon
