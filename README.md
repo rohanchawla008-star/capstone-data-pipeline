@@ -6,13 +6,17 @@ This repository contains my CodeZoner Capstone Internship project. The objective
 
 ## Tech Stack
 
+
+
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
-- Jupyter Notebook
-- Git & GitHub
+- SQLite
+- Scikit-learn
+- Git
+- GitHub
 
 ---
 
@@ -114,3 +118,24 @@ Possible future integrations:
 ## Status
 
 Week 2 Completed ✅
+
+# Week 3 Progress
+
+## Completed Tasks
+
+- Reviewed and refined cleaned dataset
+- Standardized numerical features
+- Encoded categorical variables
+- Created FamilySize feature
+- Created IsAlone feature
+- Generated distribution plots
+- Created correlation heatmap
+- Performed outlier detection
+- Verified dataset quality
+- Built preprocessing pipeline
+- Split dataset into training and testing sets
+- Applied feature scaling using StandardScaler
+
+## Status
+
+Week 3 Completed ✅
