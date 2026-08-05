@@ -1,10 +1,14 @@
 import pandas as pd
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 try:
     # Load dataset
     df = pd.read_csv("data/raw/train.csv")
-    print("Dataset loaded successfully!")
-
+    logging.info("Dataset loaded successfully!")
 except FileNotFoundError:
     print("Error: train.csv not found.")
     exit()
@@ -17,10 +21,9 @@ except Exception as e:
 # Data Validation
 # -----------------------------
 
-print("\nDataset Shape")
-print(df.shape)
+logging.info(f"Dataset Shape: {df.shape}")
 
-print("\nMissing Values")
+logging.info("Checking Missing Values...")
 print(df.isnull().sum())
 
 # -----------------------------
@@ -54,7 +57,7 @@ print("Duplicate Rows:", duplicates)
 
 df.to_csv("data/processed/train_clean.csv", index=False)
 
-print("\nCleaned dataset saved successfully!")
+logging.info("Cleaned dataset saved successfully.")
 
 # Validate dataset
 
@@ -78,7 +81,7 @@ if missing_columns:
     print("Missing Columns:", missing_columns)
     exit()
 
-print("Dataset validation successful!")
+logging.info("Dataset validation successful.")
 print("\nData Types After Cleaning")
 print(df.dtypes)
 

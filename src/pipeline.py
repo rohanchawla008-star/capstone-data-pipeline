@@ -1,45 +1,24 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+import subprocess
+import sys
 
-# Load transformed dataset
-df = pd.read_csv("data/processed/train_transformed.csv")
+scripts = [
+    "src/load_data.py",
+    "src/transform_data.py",
+    "src/visualization.py"
+]
 
-print("Dataset Loaded Successfully!\n")
+for script in scripts:
+    print(f"\nRunning {script}...\n")
 
-# Features and Target
-X = df.drop("Survived", axis=1)
-y = df["Survived"]
+    result = subprocess.run(
+        [sys.executable, script],
+        capture_output=True,
+        text=True
+    )
 
-print("Features Shape:", X.shape)
-print("Target Shape:", y.shape)
+    print(result.stdout)
 
-# Train-Test Split
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42
-)
+    if result.stderr:
+        print(result.stderr)
 
-print("\nTrain-Test Split Completed!")
-
-print("Training Samples:", X_train.shape)
-print("Testing Samples:", X_test.shape)
-
-# Scale Numerical Columns
-scaler = StandardScaler()
-
-numerical_columns = ["Age", "Fare", "FamilySize"]
-
-X_train[numerical_columns] = scaler.fit_transform(
-    X_train[numerical_columns]
-)
-
-X_test[numerical_columns] = scaler.transform(
-    X_test[numerical_columns]
-)
-
-print("\nFeature Scaling Completed!")
-
-print("\nPipeline Executed Successfully!")
+print("\nPipeline execution complete.")
