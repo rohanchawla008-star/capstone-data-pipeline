@@ -1,21 +1,24 @@
 import pandas as pd
 
-# -----------------------------
-# Load Dataset
-# -----------------------------
-df = pd.read_csv("data/raw/train.csv")
+try:
+    # Load dataset
+    df = pd.read_csv("data/raw/train.csv")
+    print("Dataset loaded successfully!")
 
-print("First 5 Rows")
-print(df.head())
+except FileNotFoundError:
+    print("Error: train.csv not found.")
+    exit()
+
+except Exception as e:
+    print(f"Unexpected Error: {e}")
+    exit()
+
+# -----------------------------
+# Data Validation
+# -----------------------------
 
 print("\nDataset Shape")
 print(df.shape)
-
-print("\nColumn Names")
-print(df.columns)
-
-print("\nData Types")
-print(df.dtypes)
 
 print("\nMissing Values")
 print(df.isnull().sum())
@@ -31,7 +34,7 @@ df["Age"] = df["Age"].fillna(df["Age"].median())
 df["Embarked"] = df["Embarked"].fillna(df["Embarked"].mode()[0])
 
 # Drop Cabin column
-df.drop(columns=["Cabin"], inplace=True)
+df = df.drop(columns=["Cabin"])
 
 print("\nMissing Values After Cleaning")
 print(df.isnull().sum())
@@ -39,6 +42,31 @@ print(df.isnull().sum())
 # -----------------------------
 # Save Cleaned Dataset
 # -----------------------------
+
 df.to_csv("data/processed/train_clean.csv", index=False)
 
 print("\nCleaned dataset saved successfully!")
+
+# Validate dataset
+
+required_columns = [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Name",
+    "Sex",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Ticket",
+    "Fare",
+    "Embarked"
+]
+
+missing_columns = [col for col in required_columns if col not in df.columns]
+
+if missing_columns:
+    print("Missing Columns:", missing_columns)
+    exit()
+
+print("Dataset validation successful!")
