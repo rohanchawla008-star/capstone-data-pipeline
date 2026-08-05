@@ -39,6 +39,15 @@ df = df.drop(columns=["Cabin"])
 print("\nMissing Values After Cleaning")
 print(df.isnull().sum())
 
+print("\nData Types After Cleaning")
+print(df.dtypes)
+
+print("\nChecking for Duplicate Rows")
+
+duplicates = df.duplicated().sum()
+
+print("Duplicate Rows:", duplicates)
+
 # -----------------------------
 # Save Cleaned Dataset
 # -----------------------------
@@ -70,3 +79,14 @@ if missing_columns:
     exit()
 
 print("Dataset validation successful!")
+print("\nData Types After Cleaning")
+print(df.dtypes)
+
+print("\nChecking for Duplicate Rows")
+duplicates = df.duplicated().sum()
+print(f"Duplicate Rows: {duplicates}")
+
+if duplicates == 0:
+    print("No duplicate rows found.")
+else:
+    print("Duplicate rows detected.")
