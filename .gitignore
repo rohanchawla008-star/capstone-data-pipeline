@@ -6,3 +6,4 @@ __pycache__/
 database.db
 cloud_storage/
 test_setup.py
+titanic.db
