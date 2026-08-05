@@ -346,3 +346,62 @@ python src/model_interpretation.py
 ✅ Week 5 Completed
 
 🚀 Week 6 Coming Soon
+---
+
+# Week 6 Progress
+
+## Streamlit Application
+
+### Completed Tasks
+
+- Created the Streamlit application
+- Integrated the trained model
+- Added interactive user input fields
+- Displayed prediction probabilities
+- Added survival prediction results
+- Improved the user interface
+
+---
+
+## Deployment Preparation
+
+### Completed Tasks
+
+- Created a virtual environment
+- Updated project dependencies
+- Verified application execution
+- Tested the deployment pipeline
+
+---
+
+## Running the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Current Status
+
+✅ Week 1 Completed
+
+✅ Week 2 Completed
+
+✅ Week 3 Completed
+
+✅ Week 4 Completed
+
+✅ Week 5 Completed
+
+✅ Week 6 In Progress
+
+---
+
+## Future Improvements
+
+- Docker deployment
+- Cloud deployment
+- Improved user interface
+- Additional feature engineering
+- Model monitoring
