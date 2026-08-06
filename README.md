@@ -78,7 +78,6 @@ CodeZoner_Capstone/
 ├── notebooks/
 ├── reports/
 ├── images/
-├── cloud_storage/
 ├── README.md
 ├── requirements.txt
 ├── runtime.txt
@@ -145,41 +144,21 @@ The application predicts:
 
 ---
 
-# 📸 Screenshots
+# 📸 Application Screenshot
 
-## Home Page
-
-> Add screenshot here
-
-Example:
-
-```
-images/home_page.png
-```
-
----
-
-## Prediction Result
-
-> Add screenshot here
-
-Example:
-
-```
-images/prediction_result.png
-```
+![Titanic Survival Prediction](images/app.png)
 
 ---
 
 # 🌐 Live Demo
 
-https://capstone-data-pipeline-wixpk3uztyegrcp6ajeatm.streamlit.app
+[Live Streamlit App](https://capstone-data-pipeline-wixpk3uztyegrcp6ajeatm.streamlit.app)
 
 ---
 
 # 🔗 GitHub Repository
 
-https://github.com/rohanchawla008-star/capstone-data-pipeline
+[GitHub Repository](https://github.com/rohanchawla008-star/capstone-data-pipeline)
 
 ---
 
