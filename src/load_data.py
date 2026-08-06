@@ -1,23 +1,29 @@
 import pandas as pd
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+try:
+    # Load dataset
+    df = pd.read_csv("data/raw/train.csv")
+    logging.info("Dataset loaded successfully!")
+except FileNotFoundError:
+    print("Error: train.csv not found.")
+    exit()
+
+except Exception as e:
+    print(f"Unexpected Error: {e}")
+    exit()
 
 # -----------------------------
-# Load Dataset
+# Data Validation
 # -----------------------------
-df = pd.read_csv("data/raw/train.csv")
 
-print("First 5 Rows")
-print(df.head())
+logging.info(f"Dataset Shape: {df.shape}")
 
-print("\nDataset Shape")
-print(df.shape)
-
-print("\nColumn Names")
-print(df.columns)
-
-print("\nData Types")
-print(df.dtypes)
-
-print("\nMissing Values")
+logging.info("Checking Missing Values...")
 print(df.isnull().sum())
 
 # -----------------------------
@@ -31,14 +37,59 @@ df["Age"] = df["Age"].fillna(df["Age"].median())
 df["Embarked"] = df["Embarked"].fillna(df["Embarked"].mode()[0])
 
 # Drop Cabin column
-df.drop(columns=["Cabin"], inplace=True)
+df = df.drop(columns=["Cabin"])
 
 print("\nMissing Values After Cleaning")
 print(df.isnull().sum())
 
+print("\nData Types After Cleaning")
+print(df.dtypes)
+
+print("\nChecking for Duplicate Rows")
+
+duplicates = df.duplicated().sum()
+
+print("Duplicate Rows:", duplicates)
+
 # -----------------------------
 # Save Cleaned Dataset
 # -----------------------------
+
 df.to_csv("data/processed/train_clean.csv", index=False)
 
-print("\nCleaned dataset saved successfully!")
+logging.info("Cleaned dataset saved successfully.")
+
+# Validate dataset
+
+required_columns = [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Name",
+    "Sex",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Ticket",
+    "Fare",
+    "Embarked"
+]
+
+missing_columns = [col for col in required_columns if col not in df.columns]
+
+if missing_columns:
+    print("Missing Columns:", missing_columns)
+    exit()
+
+logging.info("Dataset validation successful.")
+print("\nData Types After Cleaning")
+print(df.dtypes)
+
+print("\nChecking for Duplicate Rows")
+duplicates = df.duplicated().sum()
+print(f"Duplicate Rows: {duplicates}")
+
+if duplicates == 0:
+    print("No duplicate rows found.")
+else:
+    print("Duplicate rows detected.")
