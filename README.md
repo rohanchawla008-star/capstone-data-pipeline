@@ -1,3 +1,10 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
+
 # 🚢 Titanic Survival Prediction
 
 A complete end-to-end Machine Learning project that predicts whether a Titanic passenger would survive based on passenger information such as age, gender, passenger class, fare, and family details.
