@@ -1,37 +1,54 @@
 # 🚢 Titanic Survival Prediction
 
-## 📌 Problem Statement
+A complete end-to-end Machine Learning project that predicts whether a Titanic passenger would survive based on passenger information such as age, gender, passenger class, fare, and family details.
 
-The Titanic disaster is one of the most well-known maritime tragedies in history. This project predicts whether a passenger would survive based on passenger information such as age, gender, passenger class, fare, and family details using Machine Learning.
-
----
-
-## 💡 Solution
-
-A complete end-to-end Machine Learning pipeline was developed that:
-
-- Loads and validates the Titanic dataset
-- Cleans and preprocesses data
-- Performs feature engineering
-- Trains and evaluates a classification model
-- Saves the trained model
-- Provides an interactive Streamlit web application for real-time predictions
+The project includes data preprocessing, feature engineering, model training, model serialization, and deployment using Streamlit Cloud.
 
 ---
 
-## 🚀 Features
+# 📌 Problem Statement
+
+The Titanic disaster is one of the most famous maritime tragedies in history. Given passenger information, the objective is to predict whether a passenger would survive using Machine Learning.
+
+This project demonstrates a complete ML workflow from raw data to a deployed web application.
+
+---
+
+# 💡 Solution
+
+The project follows an end-to-end Machine Learning pipeline:
+
+- Data Collection
+- Data Cleaning
+- Data Preprocessing
+- Feature Engineering
+- Model Training
+- Model Evaluation
+- Model Serialization using Pickle
+- Deployment using Streamlit Cloud
+
+Users can enter passenger details through an interactive web interface and instantly receive:
+
+- Survival Prediction
+- Survival Probability
+
+---
+
+# 🚀 Features
 
 - Interactive Streamlit Web Application
-- Real-time Survival Prediction
-- Probability Score
+- Real-Time Prediction
+- Survival Probability Score
 - Data Cleaning & Validation
 - Feature Engineering
-- Machine Learning Model
-- Model Serialization using Pickle
+- Machine Learning Classification Model
+- Pickle Model Serialization
+- Responsive User Interface
+- Streamlit Cloud Deployment
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 - Python
 - Pandas
@@ -41,11 +58,12 @@ A complete end-to-end Machine Learning pipeline was developed that:
 - Seaborn
 - Streamlit
 - Pickle
-- Git & GitHub
+- Git
+- GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 CodeZoner_Capstone/
@@ -57,51 +75,60 @@ CodeZoner_Capstone/
 ├── data/
 │   ├── raw/
 │   └── processed/
+├── notebooks/
 ├── reports/
 ├── images/
-├── notebooks/
+├── cloud_storage/
 ├── README.md
 ├── requirements.txt
-└── packages.txt
+├── runtime.txt
+├── .gitignore
+└── Titanic_EDA.ipynb
 ```
 
 ---
 
-## ⚙ Installation
+# ⚙ Installation
 
-Clone the repository
+## Clone the repository
 
 ```bash
 git clone https://github.com/rohanchawla008-star/capstone-data-pipeline.git
 ```
 
-Move into project folder
+## Move into project directory
 
 ```bash
 cd capstone-data-pipeline
 ```
 
-Create virtual environment
+## Create virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate virtual environment
+## Activate virtual environment
 
-Windows
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies
+### Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+## Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+## Run the application
 
 ```bash
 streamlit run app.py
@@ -109,38 +136,72 @@ streamlit run app.py
 
 ---
 
-## 📊 Model Output
+# 📊 Model Output
 
-The application predicts
+The application predicts:
 
-- Survival Status
+- Passenger Survival Status
 - Survival Probability
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-> Screenshots will be added after deployment.
+## Home Page
 
----
+> Add screenshot here
 
-## 🌐 Live Demo
+Example:
 
-> Deployment link will be added after Streamlit deployment.
-
----
-
-## 📈 Future Improvements
-
-- Hyperparameter tuning
-- Cloud deployment
-- API integration
-- Docker support
+```
+images/home_page.png
+```
 
 ---
 
-## 👨‍💻 Author
+## Prediction Result
+
+> Add screenshot here
+
+Example:
+
+```
+images/prediction_result.png
+```
+
+---
+
+# 🌐 Live Demo
+
+https://capstone-data-pipeline-wixpk3uztyegrcp6ajeatm.streamlit.app
+
+---
+
+# 🔗 GitHub Repository
+
+https://github.com/rohanchawla008-star/capstone-data-pipeline
+
+---
+
+# 📈 Future Improvements
+
+- Hyperparameter Tuning
+- Docker Containerization
+- REST API Integration
+- AWS Cloud Deployment
+- User Authentication
+- Database Integration
+
+---
+
+# 👨‍💻 Author
 
 **Rohan Chawla**
 
 CodeZoner Capstone Internship Project
+
+---
+
+# ⭐ Acknowledgements
+
+This project was developed as part of the **CodeZoner Capstone Internship Program** to demonstrate the complete Machine Learning lifecycle, including data preprocessing, model development, deployment, and version control using Git and GitHub.
