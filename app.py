@@ -50,17 +50,23 @@ age = st.sidebar.slider(
 
 fare = st.sidebar.number_input(
     "Fare",
-    value=20.0
+    min_value=0.0,
+    value=20.0,
+    step=1.0
 )
 
 sibsp = st.sidebar.number_input(
     "Siblings/Spouses",
-    value=0
+    min_value=0,
+    value=0,
+    step=1
 )
 
 parch = st.sidebar.number_input(
     "Parents/Children",
-    value=0
+    min_value=0,
+    value=0,
+    step=1
 )
 
 # -----------------------------
