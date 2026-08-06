@@ -5,6 +5,8 @@
 
 
 
+
+
 # 🚢 Titanic Survival Prediction
 
 A complete end-to-end Machine Learning project that predicts whether a Titanic passenger would survive based on passenger information such as age, gender, passenger class, fare, and family details.
@@ -12,6 +14,22 @@ A complete end-to-end Machine Learning project that predicts whether a Titanic p
 The project includes data preprocessing, feature engineering, model training, model serialization, and deployment using Streamlit Cloud.
 
 ---
+
+## 📑 Table of Contents
+
+- [Problem Statement](#-problem-statement)
+- [Solution](#-solution)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Model Output](#-model-output)
+- [Application Screenshot](#-application-screenshot)
+- [Live Demo](#-live-demo)
+- [Future Improvements](#-future-improvements)
+- [Author](#-author)
+
+
 
 # 📌 Problem Statement
 
